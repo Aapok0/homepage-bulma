@@ -23,7 +23,7 @@
   "author": "Aapo Kokko",
   "license": "ISC",
   "devDependencies": {
-    "bulma": "^0.9.4",
+    "bulma": "^1.0.0",
     "sass": "^1.72.0"
   }
 }

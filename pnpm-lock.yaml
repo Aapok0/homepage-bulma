@@ -6,8 +6,8 @@ settings:
 
 devDependencies:
   bulma:
-    specifier: ^0.9.4
-    version: 0.9.4
+    specifier: ^1.0.0
+    version: 1.0.0
   sass:
     specifier: ^1.72.0
     version: 1.72.0
@@ -34,8 +34,10 @@ packages:
       fill-range: 7.0.1
     dev: true
 
-  /bulma@0.9.4:
-    resolution: {integrity: sha512-86FlT5+1GrsgKbPLRRY7cGDg8fsJiP/jzTqXXVqiUZZ2aZT8uemEOHlU1CDU+TxklPEZ11HZNNWclRBBecP4CQ==}
+  /bulma@1.0.0:
+    resolution: {integrity: sha512-7n49v/gdHXaHcU9fVobqGXO2OguiCoMh6CLbeX7jq00XrZ5vOSE4LNS0S/0Q6rlBbckY6kk6W7LwqxS0nu4bug==}
+    dependencies:
+      sass: 1.72.0
     dev: true
 
   /chokidar@3.5.3:
