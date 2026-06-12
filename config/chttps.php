@@ -1,4 +1,8 @@
 <?php
+  if (getenv('APP_ENV') === 'local') {
+    return;
+  }
+
   //If the HTTPS is not found to be 'on'
   if(!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != 'on')
   {
