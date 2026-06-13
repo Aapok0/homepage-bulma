@@ -1,29 +1,29 @@
-// ** REGULAR **
+@use 'palette' as p;
 
 .font_black {
-  color: $my_black;
+  color: p.$my_black;
 }
 
 .font_white {
-  color: $my_white;
+  color: p.$my_white;
 }
 
 .font_light_base {
-  font-family: font_light;
+  font-family: 'raleway_l', sans-serif;
 }
 
 .font_regular_base {
-  font-family: font_regular;
+  font-family: 'raleway_r', sans-serif;
 }
 
 .font_bold_base {
-  font-family: font_bold;
+  font-family: 'raleway_b', sans-serif;
 }
 
 .font_italic_base {
-  font-family: font_italic;
+  font-family: 'raleway_i', sans-serif;
 }
 
 .font_bold_italic_base {
-  font-family: font_bold_italic;
+  font-family: 'raleway_bi', sans-serif;
 }

@@ -43,6 +43,6 @@ Production enforces HTTPS via `config/chttps.php`. Setting `APP_ENV=local` skips
 | Area | Location |
 |------|----------|
 | Page content and layout | `*.php`, `components/` |
-| Styles | `scss/` (Bulma imported from `node_modules`) |
+| Styles | `scss/` (Bulma 1.x via `@use`, theme in `main.scss`) |
 | JavaScript | `js/` |
 | Active nav indicator | `php/navIndicator.php` |

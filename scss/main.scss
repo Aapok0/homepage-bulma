@@ -1,29 +1,47 @@
-// ** SASS IMPORTS **
-
 @charset "utf-8";
 
-@import './colors';
-@import './fonts';
-@import './typography';
+@use 'palette' as p;
+@use 'fonts';
+@use 'bulma/sass' with (
+  $primary: p.$palette-3,
+  $link: p.$palette-5,
+  $info: #7d8caa,
+  $success: p.$palette-5,
+  $warning: p.$palette-4,
+  $danger: p.$palette-3,
+  $scheme-main: p.$palette-4,
+  $text: p.$my_white,
+  $text-invert: p.$my_black,
+  $text-strong: p.$my_white,
+  $family-primary: 'poiret_r, sans-serif',
+  $family-secondary: 'playfair_r, serif',
+  $family-code: 'raleway_r, sans-serif',
+);
+@use 'bulma/sass/utilities/mixins' as *;
+@use 'typography';
 
-// ** SITE WIDE **
+// Site wide
 
-html { 
+html {
   scroll-behavior: smooth;
 }
 
 .is-transparent {
-  opacity: 0.95
+  opacity: 0.95;
 }
 
-// ** NAVIGATION **
+// Navigation
+
+.navbar {
+  --bulma-navbar-background-color: #{p.$palette-1};
+}
 
 .is-open {
-  background-color: $palette-5;
-  color: $text-invert !important;
+  background-color: p.$palette-5;
+  color: p.$my_black !important;
 }
 
-// ** HERO BANNER **
+// Hero banner
 
 .hero.has-background {
   position: relative;
@@ -38,7 +56,7 @@ html {
   height: 100%;
 }
 
-// ** ABOUT **
+// About
 
 .portrait {
   object-fit: cover;
@@ -48,26 +66,24 @@ html {
   margin-bottom: 1.5rem;
 }
 
-// ** RESUME **
+// Resume
 
 .resume-subtitle {
-  border-bottom: 3px solid $palette-4;
+  border-bottom: 3px solid p.$palette-4;
 }
 
 .resume-item {
-  border-bottom: 1px solid $palette-4;
-  border-right: 1px solid $palette-4;
+  border-bottom: 1px solid p.$palette-4;
+  border-right: 1px solid p.$palette-4;
 }
 
-// ** SKILLS **
+// Skills
 
 .skillbar {
   transform: rotate(-90deg);
   transition: all 1s ease-in-out;
-  
-  /* SVG */
   fill: none;
-  stroke: $palette-5;
+  stroke: p.$palette-5;
   stroke-width: 3;
   stroke-linecap: round;
   stroke-dasharray: 0 999;
@@ -77,11 +93,11 @@ html {
   transform: rotate(90deg);
 }
 
-// ** INTERESTS **
+// Footer
 
-
-
-// ** FOOTER **
+.footer {
+  --bulma-footer-background-color: #{p.$palette-1};
+}
 
 .github {
   display: inline-block;
@@ -92,9 +108,6 @@ html {
 }
 
 .github:hover {
-  display: inline-block;
-  width: 48px;
-  height: 48px;
   background: url(../img/github-white.png) no-repeat;
   background-size: cover;
 }
@@ -108,9 +121,6 @@ html {
 }
 
 .linkedin:hover {
-  display: inline-block;
-  width: 48px;
-  height: 48px;
   background: url(../img/linkedin-white.png) no-repeat;
   background-size: cover;
 }
@@ -124,18 +134,11 @@ html {
 }
 
 .instagram:hover {
-  display: inline-block;
-  width: 48px;
-  height: 48px;
   background: url(../img/instagram-white.png) no-repeat;
   background-size: cover;
 }
 
-// Import Bulma CSS here in order to not overwrite my own CSS above
-
-@import '../node_modules/bulma/bulma';
-
-// ** REQUIRES BULMA **
+// Bulma responsive helpers
 
 .hero-text {
   @include mobile {
@@ -189,7 +192,7 @@ svg.skillbar {
     display: flex !important;
     flex-wrap: wrap-reverse !important;
   }
-  
+
   @include desktop {
     display: flex !important;
     justify-content: space-between !important;
@@ -205,4 +208,24 @@ svg.skillbar {
   @include desktop {
     width: 48%;
   }
+}
+
+.background-1 {
+  background-color: p.$palette-1 !important;
+}
+
+.background-2 {
+  background-color: p.$palette-2 !important;
+}
+
+.background-3 {
+  background-color: p.$palette-3 !important;
+}
+
+.background-4 {
+  background-color: p.$palette-4 !important;
+}
+
+.background-5 {
+  background-color: p.$palette-5 !important;
 }
