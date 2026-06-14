@@ -1,9 +1,11 @@
 <?php
 return [
-    'canonical' => 'www.aapokokko.fi',
+    'canonical' => 'www.aapokokko.com',
     'allowed' => [
         'aapokokko.fi',
         'www.aapokokko.fi',
+        'aapokokko.com',
+        'www.aapokokko.com',
         'localhost',
         '127.0.0.1',
     ],
