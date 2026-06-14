@@ -36,9 +36,16 @@ html {
   --bulma-navbar-background-color: #{p.$palette-1};
 }
 
-.is-open {
-  background-color: p.$palette-5;
+a.navbar-item.is-open {
+  background-color: p.$palette-5 !important;
   color: p.$my_black !important;
+
+  &:hover,
+  &:focus,
+  &:focus-within {
+    background-color: p.$palette-5 !important;
+    color: p.$my_black !important;
+  }
 }
 
 // Hero banner
