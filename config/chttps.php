@@ -1,14 +1,40 @@
 <?php
-  if (getenv('APP_ENV') === 'local') {
+if (getenv('APP_ENV') === 'local') {
     return;
-  }
+}
 
-  //If the HTTPS is not found to be 'on'
-  if(!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != 'on')
-  {
-    //Tell the browser to redirect to the HTTPS URL.
-    header('Location: https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'], true, 301);
-    //Prevent the rest of the script from executing.
+$hosts = include __DIR__ . '/hosts.php';
+
+function request_host(array $hosts): string
+{
+    $host = $_SERVER['HTTP_HOST'] ?? '';
+    $host = strtolower(preg_replace('/:\d+$/', '', $host));
+
+    if (!in_array($host, $hosts['allowed'], true)) {
+        http_response_code(400);
+        exit('Invalid host');
+    }
+
+    return $host;
+}
+
+function is_https(): bool
+{
+    if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') {
+        return true;
+    }
+
+    if (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
+        return true;
+    }
+
+    return false;
+}
+
+$host = request_host($hosts);
+
+if (!is_https() && !in_array($host, $hosts['local'], true)) {
+    $uri = $_SERVER['REQUEST_URI'] ?? '/';
+    header('Location: https://' . $host . $uri, true, 301);
     exit;
-  }
-?>
+}
