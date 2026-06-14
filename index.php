@@ -9,7 +9,7 @@ include(dirname(__FILE__).'/components/navbar.php')
 <!-- Hero banner, small introduction and call to action -->
 <section class='hero is-fullheight has-background'>
   <img class='hero-background' src='img/background-1.jpg' alt='Background image of Pältsan'>
- 
+
   <!-- Hero box start -->
   <div class='hero-body'>
     <div class='container hero-text box has-text-centered background-1 is-transparent'>
