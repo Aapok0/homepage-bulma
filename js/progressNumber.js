@@ -19,6 +19,8 @@ function increaseNumber(i, lastnm, el) {
 
 animateNumber('nm_web');
 animateNumber('nm_prog');
-animateNumber('nm_cloud');
 animateNumber('nm_iac');
+animateNumber('nm_uiux');
+animateNumber('nm_cloud');
+animateNumber('nm_services');
 animateNumber('nm_term');

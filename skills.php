@@ -79,9 +79,9 @@ include(dirname(__FILE__).'/components/navbar.php')
 
             <!-- UI/UX start -->
             <h3 class='subtitle is-size-3-widescreen is-size-4-desktop is-size-4-mobile'>UI/UX</h3>
-            <svg class='skillbar bar_prog' viewbox='0 0 100 100' width='200' height='200' data-percent='25'>
+            <svg class='skillbar bar_uiux' viewBox='0 0 100 100' width='200' height='200' data-percent='25'>
               <circle cx='50' cy='50' r='40' />
-              <text id='nm_prog' class='skilltext' x='50' y='-50' alignment-baseline='middle' stroke-width='1px' stroke='#F7F8F7' text-anchor='middle'>25</text>
+              <text id='nm_uiux' class='skilltext' x='50' y='-50' alignment-baseline='middle' stroke-width='1px' stroke='#F7F8F7' text-anchor='middle'>25</text>
             </svg>
 
             <div class='box background-1'>
@@ -120,9 +120,9 @@ include(dirname(__FILE__).'/components/navbar.php')
 
             <!-- Services start -->
             <h3 class='subtitle is-size-3-widescreen is-size-4-desktop is-size-4-mobile'>Services</h3>
-            <svg class='skillbar bar_cloud' viewbox='0 0 100 100' width='200' height='200' data-percent='35'>
+            <svg class='skillbar bar_services' viewBox='0 0 100 100' width='200' height='200' data-percent='35'>
               <circle cx='50' cy='50' r='40' />
-              <text id='nm_cloud' class='skilltext' x='50' y='-50' alignment-baseline='middle' stroke-width='1px' stroke='#F7F8F7' text-anchor='middle'>35</text>
+              <text id='nm_services' class='skilltext' x='50' y='-50' alignment-baseline='middle' stroke-width='1px' stroke='#F7F8F7' text-anchor='middle'>35</text>
             </svg>
 
             <div class='box background-1'>

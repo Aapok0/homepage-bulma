@@ -9,6 +9,8 @@ function animateCircle(bar) {
 
 animateCircle('bar_web');
 animateCircle('bar_prog');
-animateCircle('bar_cloud');
 animateCircle('bar_iac');
+animateCircle('bar_uiux');
+animateCircle('bar_cloud');
+animateCircle('bar_services');
 animateCircle('bar_term');
