@@ -6,3 +6,6 @@ node_modules/
 
 # Ignore css directory (css is built before deploy)
 css/
+
+# Ignore workspace file
+homepage-bulma.code-workspace
