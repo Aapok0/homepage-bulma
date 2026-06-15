@@ -25,7 +25,7 @@ include(dirname(__FILE__).'/components/navbar.php')
 
       <!-- Call-to-action -->
       <div class='block'>
-        <a href='#contact-info'><button class='button is-link is-size-6 is-size-7-mobile has-text-weight-semibold'>Get in contact!</button></a>
+        <a href='#contact-info' class='button is-link is-size-6 is-size-7-mobile has-text-weight-semibold'>Get in contact!</a>
       </div>
 
     </div>

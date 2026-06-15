@@ -88,12 +88,15 @@ a.navbar-item.is-open {
 
 .skillbar {
   transform: rotate(-90deg);
-  transition: all 1s ease-in-out;
-  fill: none;
-  stroke: p.$palette-5;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-dasharray: 0 999;
+
+  circle {
+    fill: none;
+    stroke: p.$palette-5;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 0 999;
+    transition: stroke-dasharray 1.5s ease-in-out;
+  }
 }
 
 .skilltext {

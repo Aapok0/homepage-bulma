@@ -213,7 +213,7 @@ include(dirname(__FILE__).'/components/navbar.php')
 
       <!-- Button to resume -->
       <div class='block has-text-centered'>
-        <a href='skills.php'><button class='button is-link is-size-6 is-size-7-mobile has-text-weight-semibold'>Check my skills</button></a>
+        <a href='skills.php' class='button is-link is-size-6 is-size-7-mobile has-text-weight-semibold'>Check my skills</a>
       </div>
 
     </div>

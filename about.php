@@ -56,7 +56,7 @@ include(dirname(__FILE__).'/components/navbar.php')
 
       <!-- Button to resume -->
       <div class='block'>
-        <a href='resume.php'><button class='button is-link is-size-6 is-size-7-mobile has-text-weight-semibold'>See my resume</button></a>
+        <a href='resume.php' class='button is-link is-size-6 is-size-7-mobile has-text-weight-semibold'>See my resume</a>
       </div>
 
     </div>
