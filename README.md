@@ -24,7 +24,15 @@ The `css/` directory is gitignored and built before deploy, so run `css-build` o
 
 ### Daily workflow
 
-Use two terminals:
+**One terminal (CSS watch + PHP server):**
+
+```bash
+pnpm run dev-start
+```
+
+Builds CSS once, then runs SCSS watch and the PHP dev server together. Stop both with Ctrl+C.
+
+**Or split across two terminals:**
 
 ```bash
 # Terminal 1 — watch SCSS changes
@@ -32,6 +40,12 @@ pnpm start
 
 # Terminal 2 — PHP dev server (HTTP, local only)
 APP_ENV=local php -S localhost:8080
+```
+
+**PHP only (no SCSS watch):**
+
+```bash
+pnpm run dev
 ```
 
 Open http://localhost:8080/index.php
