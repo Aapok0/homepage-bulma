@@ -1,4 +1,6 @@
 <?php
+$pageTitle = 'About';
+$pageDescription = 'About Aapo Kokko — DevOps engineer background, work, and career goals.';
 include(dirname(__FILE__).'/components/header.php')
 ?>
 

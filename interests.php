@@ -1,4 +1,6 @@
 <?php
+$pageTitle = 'Interests';
+$pageDescription = 'Personal interests in health technology, fitness, music, and outdoor activities.';
 include(dirname(__FILE__).'/components/header.php')
 ?>
 

@@ -1,4 +1,6 @@
 <?php
+$pageTitle = 'Skills';
+$pageDescription = 'Technical skills in DevOps, cloud, development, and tooling.';
 include(dirname(__FILE__).'/components/header.php')
 ?>
 

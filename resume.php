@@ -1,4 +1,6 @@
 <?php
+$pageTitle = 'Resume';
+$pageDescription = 'Education, work experience, certifications, and references for Aapo Kokko.';
 include(dirname(__FILE__).'/components/header.php')
 ?>
 

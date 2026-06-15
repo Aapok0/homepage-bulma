@@ -1,4 +1,6 @@
 <?php
+$pageTitle = 'Home';
+$pageDescription = 'DevOps engineer CV and homepage for Aapo Kokko.';
 include(dirname(__FILE__).'/components/header.php')
 ?>
 
