@@ -34,7 +34,7 @@ include __DIR__ . '/components/layout-start.php';
       <!-- Why health technology -->
       <h2 class='subtitle is-size-5 is-size-6-mobile is-family-code'>Why I directed my studies towards health technology</h2>
       <p class='block is-size-5-widescreen is-size-6-desktop is-size-7-mobile has-text-left'>
-        My passion for health related fields flows from my own interest with bettering myself and especially from solving my own health related issues. I've worked as my own personal trainer and physiotherapist for a quite a while now (though I do also consult professionals regularly) and try to use technology to my advantage, whenever I can. I almost ended studying either physiotherapy or podiatry before going back to the health technology route. I feel that my choice in the end was a better combination of my interests. Working with health technology is a mark I'd like to leave on this earth. To read more about my interests, you can visit <a href='interests.php'>here</a>.
+        My passion for health related fields flows from my own interest with bettering myself and especially from solving my own health related issues. I've worked as my own personal trainer and physiotherapist for a quite a while now (though I do also consult professionals regularly) and try to use technology to my advantage, whenever I can. I almost ended studying either physiotherapy or podiatry before going back to the health technology route. I feel that my choice in the end was a better combination of my interests. Working with health technology is a mark I'd like to leave on this earth. To read more about my interests, you can visit <a href='interests'>here</a>.
       </p>
 
       <!-- Future -->
@@ -45,7 +45,7 @@ include __DIR__ . '/components/layout-start.php';
 
       <!-- Button to resume -->
       <div class='block'>
-        <a href='resume.php' class='button is-link is-size-6 is-size-7-mobile has-text-weight-semibold'>See my resume</a>
+        <a href='resume' class='button is-link is-size-6 is-size-7-mobile has-text-weight-semibold'>See my resume</a>
       </div>
 
 <?php include __DIR__ . '/components/layout-end.php'; ?>

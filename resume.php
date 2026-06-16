@@ -203,7 +203,7 @@ include __DIR__ . '/components/layout-start.php';
 
       <!-- Button to resume -->
       <div class='block has-text-centered'>
-        <a href='skills.php' class='button is-link is-size-6 is-size-7-mobile has-text-weight-semibold'>Check my skills</a>
+        <a href='skills' class='button is-link is-size-6 is-size-7-mobile has-text-weight-semibold'>Check my skills</a>
       </div>
 
 <?php include __DIR__ . '/components/layout-end.php'; ?>

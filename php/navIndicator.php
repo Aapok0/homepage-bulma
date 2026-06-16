@@ -5,10 +5,10 @@
 
   $pages = [
     ['file' => 'index', 'href' => './', 'label' => 'Home', 'icon' => 'home'],
-    ['file' => 'about', 'href' => 'about.php', 'label' => 'About', 'icon' => 'about'],
-    ['file' => 'resume', 'href' => 'resume.php', 'label' => 'Resume', 'icon' => 'resume'],
-    ['file' => 'skills', 'href' => 'skills.php', 'label' => 'Skills', 'icon' => 'skills'],
-    ['file' => 'interests', 'href' => 'interests.php', 'label' => 'Interests', 'icon' => 'interests'],
+    ['file' => 'about', 'href' => 'about', 'label' => 'About', 'icon' => 'about'],
+    ['file' => 'resume', 'href' => 'resume', 'label' => 'Resume', 'icon' => 'resume'],
+    ['file' => 'skills', 'href' => 'skills', 'label' => 'Skills', 'icon' => 'skills'],
+    ['file' => 'interests', 'href' => 'interests', 'label' => 'Interests', 'icon' => 'interests'],
   ];
 
   foreach ($pages as $page) {

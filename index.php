@@ -5,7 +5,7 @@ $heroBackground = 'img/background-1.jpg';
 include __DIR__ . '/components/layout-start.php';
 ?>
 
-      <h1 class='title is-size-3-widescreen is-size-4-mobile is-family-code'>Hi! I'm <a href='about.php'>Aapo Kokko</a>.</h1>
+      <h1 class='title is-size-3-widescreen is-size-4-mobile is-family-code'>Hi! I'm <a href='about'>Aapo Kokko</a>.</h1>
       <h2 class='subtitle is-size-5 is-size-6-mobile is-family-code'>DevOps engineer</h2>
       <p class='block is-size-5-widescreen is-size-6-desktop is-size-7-mobile'>
         Aalto University and Metropolia graduate experienced in DevOps engineering with studies in multiple fields. Certified Azure Administration and Architecture. Currently trying to learn more and more about Kubernetes and Cloud Native development.

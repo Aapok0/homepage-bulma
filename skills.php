@@ -37,7 +37,7 @@ include __DIR__ . '/components/layout-start.php';
       </div>
 
       <div class='block has-text-centered'>
-        <a href='interests.php' class='button is-link is-size-6 is-size-7-mobile has-text-weight-semibold'>Read about my interests</a>
+        <a href='interests' class='button is-link is-size-6 is-size-7-mobile has-text-weight-semibold'>Read about my interests</a>
       </div>
 
 <?php include __DIR__ . '/components/layout-end.php'; ?>
