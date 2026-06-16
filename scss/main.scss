@@ -155,6 +155,13 @@ a.navbar-item.is-open {
     max-width: 92% !important;
   }
 
+  .title a {
+    &:hover,
+    &:focus-visible {
+      color: p.$my_white;
+    }
+  }
+
   @include tablet {
     max-width: 86% !important;
   }
