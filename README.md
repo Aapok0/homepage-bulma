@@ -39,7 +39,7 @@ Builds CSS once, then runs SCSS watch and the PHP dev server together. Stop both
 pnpm start
 
 # Terminal 2 — PHP dev server (HTTP, local only)
-APP_ENV=local php -S localhost:8080
+APP_ENV=local php -S localhost:8080 router.php
 ```
 
 **PHP only (no SCSS watch):**
@@ -48,7 +48,7 @@ APP_ENV=local php -S localhost:8080
 pnpm run dev
 ```
 
-Open http://localhost:8080/index.php
+Open http://localhost:8080/ (extensionless URLs, same as production)
 
 Production enforces HTTPS via `config/chttps.php`. Setting `APP_ENV=local` skips that redirect for the built-in PHP server. Do not set this in production.
 

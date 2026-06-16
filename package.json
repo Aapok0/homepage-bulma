@@ -7,8 +7,8 @@
     "css-build": "sass --load-path=node_modules --no-source-map --quiet-deps scss/main.scss:css/main.css",
     "css-build-dev": "sass --load-path=node_modules --quiet-deps scss/main.scss:css/main.css",
     "css-watch": "sass --load-path=node_modules --quiet-deps scss/main.scss:css/main.css --watch",
-    "dev": "pnpm run css-build-dev && APP_ENV=local php -S localhost:8080",
-    "dev-start": "pnpm run css-build-dev && concurrently -n css,php -c yellow,cyan \"pnpm run css-watch\" \"APP_ENV=local php -S localhost:8080\"",
+    "dev": "pnpm run css-build-dev && APP_ENV=local php -S localhost:8080 router.php",
+    "dev-start": "pnpm run css-build-dev && concurrently -n css,php -c yellow,cyan \"pnpm run css-watch\" \"APP_ENV=local php -S localhost:8080 router.php\"",
     "start": "pnpm run css-watch"
   },
   "repository": {

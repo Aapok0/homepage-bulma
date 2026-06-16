@@ -1,7 +1,9 @@
 <?php
+  require_once __DIR__ . '/routing.php';
+
   $hosts = include __DIR__ . '/../config/hosts.php';
   $canonical_host = $hosts['canonical'];
-  $current = basename($_SERVER['SCRIPT_NAME'], '.php');
+  $current = current_page();
 
   $pages = [
     ['file' => 'index', 'href' => './', 'label' => 'Home', 'icon' => 'home'],
