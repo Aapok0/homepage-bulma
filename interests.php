@@ -1,20 +1,9 @@
 <?php
 $pageTitle = 'Interests';
 $pageDescription = 'Personal interests in health technology, fitness, music, and outdoor activities.';
-include(dirname(__FILE__).'/components/header.php')
+$heroBackground = 'img/background-5.jpg';
+include __DIR__ . '/components/layout-start.php';
 ?>
-
-<?php
-include(dirname(__FILE__).'/components/navbar.php')
-?>
-
-<!-- Hero banner and interests section -->
-<section class='hero is-fullheight has-background'>
-  <img class='hero-background' src='img/background-5.jpg' alt='Background image of Pältsan'>
-
-  <!-- Hero box start -->
-  <div class='hero-body'>
-    <div class='container hero-text box has-text-centered background-1 is-transparent'>
       <h1 class='title is-size-3 is-size-4-mobile is-family-code'>Interests</h1>
 
       <!-- Development/IT -->
@@ -170,11 +159,4 @@ include(dirname(__FILE__).'/components/navbar.php')
         </div>
       </div>
 
-    </div>
-  </div>
-  <!-- Hero box end -->
-</section>
-
-<?php
-include(dirname(__FILE__).'/components/footer.php')
-?>
+<?php include __DIR__ . '/components/layout-end.php'; ?>

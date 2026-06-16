@@ -1,20 +1,9 @@
 <?php
 $pageTitle = 'About';
 $pageDescription = 'About Aapo Kokko — DevOps engineer background, work, and career goals.';
-include(dirname(__FILE__).'/components/header.php')
+$heroBackground = 'img/background-2.jpg';
+include __DIR__ . '/components/layout-start.php';
 ?>
-
-<?php
-include(dirname(__FILE__).'/components/navbar.php')
-?>
-
-<!-- Hero banner and about me section -->
-<section class='hero is-fullheight has-background'>
-  <img class='hero-background' src='img/background-2.jpg' alt='Background image of Pältsan'>
-
-  <!-- Hero box start -->
-  <div class='hero-body'>
-    <div class='container hero-text box has-text-centered background-1 is-transparent'>
 
       <!-- Portrait, main title and current work -->
       <img class="portrait" src="img/portrait.jpg" alt="Portrait">
@@ -59,11 +48,4 @@ include(dirname(__FILE__).'/components/navbar.php')
         <a href='resume.php' class='button is-link is-size-6 is-size-7-mobile has-text-weight-semibold'>See my resume</a>
       </div>
 
-    </div>
-  </div>
-  <!-- Hero box end -->
-</section>
-
-<?php
-include(dirname(__FILE__).'/components/footer.php')
-?>
+<?php include __DIR__ . '/components/layout-end.php'; ?>

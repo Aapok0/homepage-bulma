@@ -2,23 +2,14 @@
 $pageTitle = 'Skills';
 $pageDescription = 'Technical skills in DevOps, cloud, development, and tooling.';
 $skillColumns = include __DIR__ . '/php/skills-data.php';
-include(dirname(__FILE__).'/components/header.php')
+$heroBackground = 'img/background-4.jpg';
+$heroBoxClasses = 'has-text-centered background-2 is-transparent';
+$pageScripts = ['js/progressCircle.js', 'js/progressNumber.js'];
+include __DIR__ . '/components/layout-start.php';
 ?>
 
-<?php
-include(dirname(__FILE__).'/components/navbar.php')
-?>
-
-<!-- Hero banner and skills in two columns -->
-<section class='hero is-fullheight has-background'>
-  <img class='hero-background' src='img/background-4.jpg' alt='Background image of Pältsan'>
-
-  <!-- Hero box start -->
-  <div class='hero-body'>
-    <div class='container hero-text box has-text-centered background-2 is-transparent'>
       <h1 class='title is-size-2 is-size-3-mobile is-family-code'>Skills</h1>
 
-      <!-- Columns start -->
       <div class='columns box background-2'>
         <?php foreach ($skillColumns as $column): ?>
         <div class='column m-1'>
@@ -44,20 +35,9 @@ include(dirname(__FILE__).'/components/navbar.php')
         </div>
         <?php endforeach; ?>
       </div>
-      <!-- Columns end -->
 
       <div class='block has-text-centered'>
         <a href='interests.php' class='button is-link is-size-6 is-size-7-mobile has-text-weight-semibold'>Read about my interests</a>
       </div>
 
-    </div>
-  </div>
-  <!-- Hero box end -->
-</section>
-
-<script src='js/progressCircle.js'></script>
-<script src='js/progressNumber.js'></script>
-
-<?php
-include(dirname(__FILE__).'/components/footer.php')
-?>
+<?php include __DIR__ . '/components/layout-end.php'; ?>

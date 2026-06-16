@@ -1,20 +1,10 @@
 <?php
 $pageTitle = 'Resume';
 $pageDescription = 'Education, work experience, certifications, and references for Aapo Kokko.';
-include(dirname(__FILE__).'/components/header.php')
+$heroBackground = 'img/background-3.jpg';
+$heroBoxClasses = 'background-2 is-transparent';
+include __DIR__ . '/components/layout-start.php';
 ?>
-
-<?php
-include(dirname(__FILE__).'/components/navbar.php')
-?>
-
-<!-- Hero banner and resume in two columns -->
-<section class='hero is-fullheight has-background'>
-  <img class='hero-background' src='img/background-3.jpg' alt='Background image of Pältsan'>
-
-  <!-- Hero box start -->
-  <div class='hero-body'>
-    <div class='container hero-text box background-2 is-transparent'>
       <h1 class='title is-size-2 is-size-3-mobile is-family-code has-text-centered'>Resume</h1>
 
       <!-- Resume in two columns with nested titles -->
@@ -216,11 +206,4 @@ include(dirname(__FILE__).'/components/navbar.php')
         <a href='skills.php' class='button is-link is-size-6 is-size-7-mobile has-text-weight-semibold'>Check my skills</a>
       </div>
 
-    </div>
-  </div>
-  <!-- Hero box end -->
-</section>
-
-<?php
-include(dirname(__FILE__).'/components/footer.php')
-?>
+<?php include __DIR__ . '/components/layout-end.php'; ?>
