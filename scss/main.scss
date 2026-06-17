@@ -86,21 +86,43 @@ a.navbar-item.is-open {
 
 // Skills
 
-.skillbar {
-  transform: rotate(-90deg);
-
-  circle {
-    fill: none;
-    stroke: p.$palette-5;
-    stroke-width: 3;
-    stroke-linecap: round;
-    stroke-dasharray: 0 999;
-    transition: stroke-dasharray 1.5s ease-in-out;
+.skill-legend {
+  .tag {
+    margin: 0.25rem;
   }
 }
 
-.skilltext {
-  transform: rotate(90deg);
+.skill-tier-daily {
+  background-color: p.$palette-2 !important;
+  color: p.$my_white !important;
+  border: 2px solid p.$palette-5;
+}
+
+.skill-tier-production {
+  background-color: p.$palette-5 !important;
+  color: p.$my_black !important;
+}
+
+.skill-tier-working {
+  background-color: p.$palette-4 !important;
+  color: p.$my_white !important;
+}
+
+.skill-tier-learning {
+  background-color: #7d8caa !important;
+  color: p.$my_black !important;
+}
+
+.skill-category {
+  margin-bottom: 1rem;
+
+  .tags {
+    justify-content: center;
+  }
+
+  .tag {
+    margin: 0.25rem;
+  }
 }
 
 // Footer
@@ -176,18 +198,6 @@ a.navbar-item.is-open {
 
   @include fullhd {
     max-width: 60% !important;
-  }
-}
-
-svg.skillbar {
-  @include mobile {
-    width: 150px;
-    height: 150px;
-  }
-
-  @include tablet {
-    width: 200px;
-    height: 200px;
   }
 }
 
