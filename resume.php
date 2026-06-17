@@ -21,10 +21,10 @@ include __DIR__ . '/components/layout-start.php';
               <li class='pt-4 is-family-code resume-item'>Metropolia University of Applied Sciences</li>
               <li class='ml-4 resume-item'>2020 - 2022</li>
               <li class='ml-4 resume-item'>Programme: Information Technology</li>
-              <li class='ml-4 resume-item'>Major: Health and Well-being Technology</li>
+              <li class='ml-4 resume-item'>Major: Health and Wellbeing Technology</li>
             </ul>
 
-            <h2 class='subtitle is-size-5 is-size-6-mobile is-family-code mt-5 mb-0 resume-subtitle'>Bachelor of Ecience in Technology</h2>
+            <h2 class='subtitle is-size-5 is-size-6-mobile is-family-code mt-5 mb-0 resume-subtitle'>Bachelor of Science in Technology</h2>
             <ul class='is-size-5-widescreen is-size-6-desktop is-size-7-mobile'>
               <li class='pt-4 is-family-code resume-item'>Aalto University</li>
               <li class='ml-4 resume-item'>2012 - 2016</li>
@@ -41,25 +41,11 @@ include __DIR__ . '/components/layout-start.php';
             <h2 class='subtitle is-size-5 is-size-6-mobile is-family-code mt-1 mb-0 resume-subtitle'>Microsoft Azure</h2>
             <ul class='is-size-5-widescreen is-size-6-desktop is-size-7-mobile'>
               <li class='pt-4 is-family-code resume-item'><a href='https://learn.microsoft.com/api/credentials/share/en-us/AapoKokko-3945/48DD3F6B53D95961'>AZ-104 - Azure Administrator Associate</a></li>
-              <li class='ml-4 resume-item'>Valid: 7.2023 - 7.2024</li>
+              <li class='ml-4 resume-item'>First earned: 7.2023 · renewed annually</li>
             </ul>
             <ul class='is-size-5-widescreen is-size-6-desktop is-size-7-mobile'>
               <li class='pt-4 is-family-code resume-item'><a href='https://learn.microsoft.com/api/credentials/share/en-us/AapoKokko-3945/24E4077128CDE29A?sharingId=34159981622366F0'>AZ-305 - Azure Solutions Architect Expert</a></li>
-              <li class='ml-4 resume-item'>Valid: 9.2023 - 9.2024</li>
-            </ul>
-
-            <h2 class='subtitle is-size-5 is-size-6-mobile is-family-code mt-5 mb-0 resume-subtitle'>GitHub</h2>
-            <ul class='is-size-5-widescreen is-size-6-desktop is-size-7-mobile'>
-              <li class='pt-4 is-family-code resume-item'><a href='https://www.credly.com/badges/cabb7c10-0082-44cd-b9af-a937bd556e65/public_url'>GitHub Actions</a></li>
-              <li class='ml-4 resume-item'>Valid: 11.2022 - 11.2024</li>
-            </ul>
-            <ul class='is-size-5-widescreen is-size-6-desktop is-size-7-mobile'>
-              <li class='pt-4 is-family-code resume-item'><a href='https://www.credly.com/badges/265736dc-7dbc-47a7-b16a-ee58c2ec9300/public_ur'>GitHub Administration</a></li>
-              <li class='ml-4 resume-item'>Valid: 1.2023 - 1.2025</li>
-            </ul>
-            <ul class='is-size-5-widescreen is-size-6-desktop is-size-7-mobile'>
-              <li class='pt-4 is-family-code resume-item'><a href='https://www.credly.com/badges/3efe6d1c-67e6-42c5-9507-daaa5b1bf230/public_url'>GitHub Advanced Security</a></li>
-              <li class='ml-4 resume-item'>Valid: 1.2023 - 1.2025</li>
+              <li class='ml-4 resume-item'>First earned: 9.2023 · renewed annually</li>
             </ul>
           </div>
           <!-- Certifications end -->
@@ -114,60 +100,72 @@ include __DIR__ . '/components/layout-start.php';
           <!-- Work experience start -->
           <div class='box mb-5 background-1'>
             <h1 class='title is-size-3 is-size-4-mobile is-family-code'>Work experience</h1>
-            <h2 class='subtitle is-size-5 is-size-6-mobile is-family-code mt-1 mb-0 resume-subtitle'>Junior DevOps Engineer</h2>
+            <h2 class='subtitle is-size-5 is-size-6-mobile is-family-code mt-1 mb-0 resume-subtitle'>DevOps Engineer</h2>
+            <ul class='is-size-5-widescreen is-size-6-desktop is-size-7-mobile'>
+              <li class='pt-4 is-family-code resume-item'>Finago Oy</li>
+              <li class='ml-4 resume-item'>4.2024 -</li>
+              <li class='ml-4 resume-item'>Internal DevOps: maintenance, troubleshooting, monitoring, on-call and infra development across development, staging and production environments.</li>
+            </ul>
+
+            <h2 class='subtitle is-size-5 is-size-6-mobile is-family-code mt-5 mb-0 resume-subtitle'>Junior DevOps Engineer</h2>
             <ul class='is-size-5-widescreen is-size-6-desktop is-size-7-mobile'>
               <li class='pt-4 is-family-code resume-item'>Eficode Oy</li>
-              <li class='ml-4 resume-item'>5.2023 -</li>
-              <li class='ml-4 resume-item'>Doing system administration and operations, service setup, management and updates, monitoring and problem solving.</li>
+              <li class='ml-4 resume-item'>5.2023 - 4.2024</li>
+              <li class='ml-4 resume-item'>DevOps consultancy: system administration and operations, service setup, management and updates, monitoring and problem solving.</li>
             </ul>
 
             <h2 class='subtitle is-size-5 is-size-6-mobile is-family-code mt-5 mb-0 resume-subtitle'>Trainee Consultant</h2>
             <ul class='is-size-5-widescreen is-size-6-desktop is-size-7-mobile'>
               <li class='pt-4 is-family-code resume-item'>Eficode Oy</li>
               <li class='ml-4 resume-item'>11.2022 - 5.2023</li>
-              <li class='ml-4 resume-item'>Studying for and earning Github certificates during the first two months. Doing system administration and operations, service setup, management and updates, monitoring and problem solving.</li>
+              <li class='ml-4 resume-item'>Onboarding and DevOps consultancy: system administration, operations, service setup, management and updates, monitoring and problem solving.</li>
             </ul>
 
             <h2 class='subtitle is-size-5 is-size-6-mobile is-family-code mt-5 mb-0 resume-subtitle'>Student assistant</h2>
             <ul class='is-size-5-widescreen is-size-6-desktop is-size-7-mobile'>
               <li class='pt-4 is-family-code resume-item'>Metropolia University of Applied Sciences</li>
               <li class='ml-4 resume-item'>9.2021 - 12.2021</li>
-              <li class='ml-4 resume-item'>Organizing a mathematics and physics workshop for first year student to work on course assignments.</li>
+              <li class='ml-4 resume-item'>Organizing a mathematics and physics workshop for first year students to work on course assignments.</li>
             </ul>
 
             <h2 class='subtitle is-size-5 is-size-6-mobile is-family-code mt-5 mb-0 resume-subtitle'>Office Secretary</h2>
             <ul class='is-size-5-widescreen is-size-6-desktop is-size-7-mobile'>
               <li class='pt-4 is-family-code resume-item'>Insurance Court of Finland</li>
-              <li class='ml-4 resume-item'> 6.-7.2019, 2.-8.2020 and 9.-12.2020</li>
-              <li class='ml-4 resume-item'>Doing general IT support and office work and helping with the deployment, training and support of new software.</li>
+              <li class='ml-4 resume-item'>9.2020 - 12.2020 and 2.2020 - 8.2020</li>
+              <li class='ml-4 resume-item'>General IT support and office work; deployment, training and support of new software.</li>
+            </ul>
+            <ul class='is-size-5-widescreen is-size-6-desktop is-size-7-mobile'>
+              <li class='pt-4 is-family-code resume-item'>Office Secretary</li>
+              <li class='ml-4 resume-item'>6.2019 (1 month)</li>
+              <li class='ml-4 resume-item'>Substituted senior attendant during vacation; scanning, mail, front desk and general office duties.</li>
             </ul>
 
             <h2 class='subtitle is-size-5 is-size-6-mobile is-family-code mt-5 mb-0 resume-subtitle'>Documentation Specialist (Trainee)</h2>
             <ul class='is-size-5-widescreen is-size-6-desktop is-size-7-mobile'>
               <li class='pt-4 is-family-code resume-item'>Gemalto Oy (Thales Group)</li>
               <li class='ml-4 resume-item'>8.2019 - 2.2020</li>
-              <li class='ml-4 resume-item'>Reading through existing company documentation and supplier documentation and rewriting them into a new platform (Confluence).</li>
+              <li class='ml-4 resume-item'>Reviewing existing documentation and rewriting it into a new platform (Confluence), including structure and layout for future work.</li>
             </ul>
 
-            <h2 class='subtitle is-size-5 is-size-6-mobile is-family-code mt-5 mb-0 resume-subtitle'>Newspaper Delivery</h2>
+            <h2 class='subtitle is-size-5 is-size-6-mobile is-family-code mt-5 mb-0 resume-subtitle'>Newspaper Deliverer</h2>
             <ul class='is-size-5-widescreen is-size-6-desktop is-size-7-mobile'>
               <li class='pt-4 is-family-code resume-item'>Posti Group Oyj</li>
-              <li class='ml-4 resume-item'>4.-5.2011, 4.-8.2012 and 6.-8.2013</li>
-              <li class='ml-4 resume-item'>Delivering newspapers during the night using a delivery bicycle.</li>
+              <li class='ml-4 resume-item'>6.2013 - 8.2013, 4.2012 - 10.2012 and 4.2011 - 5.2011</li>
+              <li class='ml-4 resume-item'>Night-time newspaper and advertisement delivery by bicycle.</li>
             </ul>
 
-            <h2 class='subtitle is-size-5 is-size-6-mobile is-size-5 is-size-6-mobile is-family-code mt-5 mb-0 resume-subtitle'>ICT Technician</h2>
+            <h2 class='subtitle is-size-5 is-size-6-mobile is-family-code mt-5 mb-0 resume-subtitle'>ICT Technician</h2>
             <ul class='is-size-5-widescreen is-size-6-desktop is-size-7-mobile'>
               <li class='pt-4 is-family-code resume-item'>Elan IT Resource Oyj</li>
               <li class='ml-4 resume-item'>3.2012</li>
-              <li class='ml-4 resume-item'>Searching channels for digiboxes, and if needed, updating them during a cable network update and answering any questions customers had about it.</li>
+              <li class='ml-4 resume-item'>Searching channels for digiboxes, updating them during a cable network update and answering customer questions.</li>
             </ul>
 
             <h2 class='subtitle is-size-5 is-size-6-mobile is-family-code mt-5 mb-0 resume-subtitle'>Mover</h2>
             <ul class='is-size-5-widescreen is-size-6-desktop is-size-7-mobile'>
               <li class='pt-4 is-family-code resume-item'>Muuttohaukat Ky</li>
               <li class='ml-4 resume-item'>6.2009 - 3.2010</li>
-              <li class='ml-4 resume-item'>Moving people's stuff to new homes and moving furniture inside larger buildings like a school or a company (or out of it).</li>
+              <li class='ml-4 resume-item'>Residential and commercial moves in small teams with a truck.</li>
             </ul>
           </div>
           <!-- Work experience end -->

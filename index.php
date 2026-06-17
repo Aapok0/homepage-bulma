@@ -1,14 +1,14 @@
 <?php
 $pageTitle = 'Home';
-$pageDescription = 'DevOps engineer CV and homepage for Aapo Kokko.';
+$pageDescription = 'DevOps Engineer at Finago Oy. CV and homepage for Aapo Kokko.';
 $heroBackground = 'img/background-1.jpg';
 include __DIR__ . '/components/layout-start.php';
 ?>
 
       <h1 class='title is-size-3-widescreen is-size-4-mobile is-family-code'>Hi! I'm <a href='about'>Aapo Kokko</a>.</h1>
-      <h2 class='subtitle is-size-5 is-size-6-mobile is-family-code'>DevOps engineer</h2>
+      <h2 class='subtitle is-size-5 is-size-6-mobile is-family-code'>DevOps Engineer · Finago Oy</h2>
       <p class='block is-size-5-widescreen is-size-6-desktop is-size-7-mobile'>
-        Aalto University and Metropolia graduate experienced in DevOps engineering with studies in multiple fields. Certified Azure Administration and Architecture. Currently trying to learn more and more about Kubernetes and Cloud Native development.
+        Aalto University and Metropolia graduate working in internal DevOps — keeping development, staging and production environments running, improving them, and solving problems along the way. Azure certified; previously in DevOps consultancy at Eficode.
       </p>
 
       <div class='block'>

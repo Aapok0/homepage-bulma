@@ -18,10 +18,10 @@ include __DIR__ . '/components/layout-start.php';
             <li>I've been transitioning towards neovim with tmux for session management, but still use VS Code for certain things.</li>
             <li>Current projects and courses I'm working through:
               <ul class='ml-4' style='list-style-type: square'>
-                <li>Tweaking this website</li>
-                <li>Writing Terraforms for Azure and Ansibles for the vm to move this website to Azure using IaC and a CI/CD pipeline.</li>
-                <li>Helsinki Open University course Full Stack open</li>
-                <li>Udemy course 100 days of Python</li>
+                <li>Tweaking this website.</li>
+                <li>Writing a new homepage with Preact.</li>
+                <li>Improving my automated scripts for installing and setting up different Linux distros and my personal development environment.</li>
+                <li>Deepening my knowledge in Kubernetes and Docker.</li>
               </ul>
             </li>
           </ul>
@@ -33,14 +33,13 @@ include __DIR__ . '/components/layout-start.php';
         <div class='interest-item mb-3'>
           <h2 class='subtitle is-size-5 is-size-6-mobile is-family-code'>Exercise and self-care</h2>
           <ul class='ml-3 is-size-5-widescreen is-size-6-desktop is-size-7-mobile has-text-left' style='list-style-type: circle'>
-            <li>My routine currently includes lifting weights, bodyweight exercises and learning some calisthenics and the olympic lifts.</li>
-            <li>The various projects to improve myself include:
+            <li>My routine currently includes lifting weights, bodyweight exercises, learning calisthenics, walking , hiking, jogging and outdoor/indoor cycling.</li>
+            <li>The various projects to improve my health and well-being include:
               <ul class='ml-4' style='list-style-type: square'>
-                <li>Cultivating more nose breathing</li>
-                <li>Improving shoulder stability and mobility</li>
-                <li>Opening up chronically tight hips</li>
-                <li>Reversing damage from using too narrow toebox shoes</li>
-                <li>Maximizing sleep quality</li>
+                <li>Cultivating more nose breathing.</li>
+                <li>Improving shoulder stability and mobility.</li>
+                <li>Opening up chronically tight hips and strengthening ignored muscles related to it.</li>
+                <li>Maximizing sleep quality.</li>
               </ul>
             </li>
           </ul>
@@ -58,13 +57,16 @@ include __DIR__ . '/components/layout-start.php';
         <div class='interest-item mb-3'>
           <h2 class='subtitle is-size-5 is-size-6-mobile is-family-code'>Hiking</h2>
           <ul class='ml-3 is-size-5-widescreen is-size-6-desktop is-size-7-mobile has-text-left' style='list-style-type: circle'>
-            <li>I Love walking in general and usually get over 10 000 steps every day. Usually listen to podcasts on daily walks like Distractible and StarTalk.</li>
-            <li>I've tried to do a longer hike every year since 2018, but haven't been able to schedule it every time. I've done the following hikes so far:
+            <li>I Love walking in general and usually get average of about 13 000 steps every day. I usually listen to podcasts on daily walks like Distractible and StarTalk.</li>
+            <li>I've tried to do a longer hike every year since 2018, but haven't been able to schedule it every time. I've done the following hikes so far, with some more planned for the future:
               <ul class='ml-4' style='list-style-type: square'>
                 <li>2018: Kilpisjärvi - Barras - Pältsan</li>
                 <li>2020: Lemmenjoki</li>
                 <li>2021: Urho Kekkonen National Park</li>
-                <li>Very soon... Kevo Canyon</li>
+                <li>2023: Kevo Canyon</li>
+                <li>2024: Lyngen</li>
+                <li>2025: Koitajoki (canoeing)</li>
+                <li>2026: TBD</li>
               </ul>
             </li>
           </ul>
@@ -85,7 +87,7 @@ include __DIR__ . '/components/layout-start.php';
                 <li>Red pepper sauce</li>
               </ul>
             </li>
-            <li>I've done less baking lately, since gluten doesn't really suit my stomach. I do still eat wheat somewhat, since you know.. pizza exists and haven't found any decent gluten free bread.</li>
+            <li>I've been trying to cook more vegetarian food lately and figuring out how to do my favorite dishes without meat.</li>
           </ul>
         </div>
         <div class='interest-item mb-3'>
