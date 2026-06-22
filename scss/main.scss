@@ -73,15 +73,91 @@ a.navbar-item.is-open {
   margin-bottom: 1.5rem;
 }
 
-// Resume
+// Resume & shared content sections
+
+.content-section {
+  padding: 1.25rem;
+}
+
+.content-section-title {
+  margin-bottom: 1rem;
+}
+
+.content-collapsible {
+  summary.content-section-title {
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+}
+
+.content-collapsible-body,
+.resume-collapsible-body {
+  margin-top: 0.75rem;
+}
+
+.resume-disclosure summary {
+  cursor: pointer;
+  list-style: none;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+.resume-disclosure-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.15s ease;
+
+  &::before {
+    content: '▸';
+    flex-shrink: 0;
+    transition: transform 0.15s ease;
+  }
+
+  &:hover {
+    color: p.$palette-5;
+  }
+}
+
+.resume-disclosure[open] .resume-disclosure-summary::before {
+  transform: rotate(90deg);
+}
 
 .resume-subtitle {
   border-bottom: 3px solid p.$palette-4;
 }
 
-.resume-item {
-  border-bottom: 1px solid p.$palette-4;
-  border-right: 1px solid p.$palette-4;
+.resume-entry + .resume-entry,
+.resume-entry-organization + .resume-entry-organization {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid p.$palette-3;
+}
+
+.resume-entry:first-child,
+.content-section-title + .resume-context + .resume-entry,
+.content-section-title + .resume-entry,
+.content-section-title + .resume-entry-organization {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.resume-entry-organization .resume-role + .resume-role {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid p.$palette-3;
+}
+
+.resume-meta,
+.resume-detail,
+.resume-context {
+  margin-bottom: 0.35rem;
 }
 
 // Skills
@@ -123,6 +199,42 @@ a.navbar-item.is-open {
   .tag {
     margin: 0.25rem;
   }
+}
+
+// Interests
+
+.interest-section-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.interest-section-content,
+.interest-section-media {
+  width: 100%;
+
+  @include desktop {
+    width: calc(50% - 0.5rem);
+  }
+}
+
+.interest-section-media img {
+  width: 100%;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+.interest-list {
+  list-style-type: circle;
+  margin-left: 1rem;
+}
+
+.interest-sublist {
+  list-style-type: square;
+  margin-left: 1rem;
+  margin-top: 0.35rem;
 }
 
 // Footer
@@ -198,42 +310,6 @@ a.navbar-item.is-open {
 
   @include fullhd {
     max-width: 60% !important;
-  }
-}
-
-.interest-flex {
-  @include touch {
-    display: flex !important;
-    flex-wrap: wrap !important;
-  }
-
-  @include desktop {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-  }
-}
-
-.interest-flex-reverse {
-  @include touch {
-    display: flex !important;
-    flex-wrap: wrap-reverse !important;
-  }
-
-  @include desktop {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-  }
-}
-
-.interest-item {
-  @include touch {
-    width: 96%;
-  }
-
-  @include desktop {
-    width: 48%;
   }
 }
 
