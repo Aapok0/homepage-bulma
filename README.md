@@ -52,6 +52,10 @@ Open http://localhost:8080/ (extensionless URLs, same as production)
 
 Production enforces HTTPS via `config/chttps.php`. Setting `APP_ENV=local` skips that redirect for the built-in PHP server. Do not set this in production.
 
+### CI
+
+GitHub Actions workflow **CSS build** (`.github/workflows/css-build.yml`) runs `pnpm run css-build` on SCSS changes and uploads `css/main.css` as an artifact. Ansible still builds CSS on the VM during deploy; CI catches SCSS compile errors early.
+
 ### What to edit
 
 | Area | Location |
