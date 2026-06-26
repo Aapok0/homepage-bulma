@@ -64,3 +64,35 @@ GitHub Actions workflow **CSS build** (`.github/workflows/css-build.yml`) runs `
 | Styles | `scss/` (Bulma 1.x via `@use`, theme in `main.scss`) |
 | JavaScript | `js/` |
 | Active nav indicator | `php/navIndicator.php` |
+
+## Releasing (version tags)
+
+The webserver Ansible pins each app to a git ref via `nginx_apps[].version`. Cut a release by tagging `main`:
+
+```bash
+# Make sure main is up to date and CSS compiles
+git checkout main
+git pull
+
+# Create an annotated, semver-style tag and push it
+git tag -a v2.0.0 -m "v2.0.0"
+git push origin v2.0.0
+```
+
+Then point the deploy at it in **homepage-webserver-ansible** `group_vars/nginx`:
+
+```yaml
+nginx_apps:
+  - name: homepage-bulma
+    version: v2.0.0   # was: main
+```
+
+Re-run `nginx.yml`; the app is checked out at that tag (build/sync only run because the ref changed).
+
+Useful tag commands:
+
+```bash
+git tag                      # list tags
+git tag -d v2.0.0            # delete locally
+git push origin :v2.0.0      # delete on remote
+```
