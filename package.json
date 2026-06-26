@@ -1,13 +1,15 @@
 {
   "name": "homepage-bulma",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "CV website made with Bulma framework",
   "main": "scss/main.scss",
   "scripts": {
-    "css-build": "sass --no-source-map scss/main.scss:css/main.css",
-    "css-build-dev": "sass scss/main.scss:css/main.css",
-    "css-watch": "npm run css-build-dev -- --watch",
-    "start": "npm run css-watch"
+    "css-build": "sass --load-path=node_modules --no-source-map --quiet-deps scss/main.scss:css/main.css",
+    "css-build-dev": "sass --load-path=node_modules --quiet-deps scss/main.scss:css/main.css",
+    "css-watch": "sass --load-path=node_modules --quiet-deps scss/main.scss:css/main.css --watch",
+    "dev": "pnpm run css-build-dev && APP_ENV=local php -S localhost:8080 router.php",
+    "dev-start": "pnpm run css-build-dev && concurrently -n css,php -c yellow,cyan \"pnpm run css-watch\" \"APP_ENV=local php -S localhost:8080 router.php\"",
+    "start": "pnpm run css-watch"
   },
   "repository": {
     "type": "git",
@@ -23,7 +25,8 @@
   "author": "Aapo Kokko",
   "license": "ISC",
   "devDependencies": {
-    "bulma": "^0.9.4",
-    "sass": "^1.72.0"
+    "bulma": "^1.0.4",
+    "concurrently": "^9.1.2",
+    "sass": "^1.101.0"
   }
 }

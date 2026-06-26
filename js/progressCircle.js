@@ -1,14 +1,20 @@
 function animateCircle(bar) {
-  var $bar = $('.' + bar),
-    radius = $bar.find('circle').attr('r'),
-    percent = $bar.data('percent'),
-    circumference = 2 * radius * Math.PI,
-    level = percent * circumference / 100
-  $bar.css('stroke-dasharray', level + ' 999')
+  const circle = bar.querySelector('circle');
+  if (!circle) {
+    return;
+  }
+
+  const radius = Number(circle.getAttribute('r'));
+  const percent = Number(bar.dataset.percent);
+  const circumference = 2 * radius * Math.PI;
+  const level = percent * circumference / 100;
+
+  // Paint the empty circle first, then transition on the next frame.
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      circle.style.strokeDasharray = level + ' 999';
+    });
+  });
 }
 
-animateCircle('bar_web');
-animateCircle('bar_prog');
-animateCircle('bar_cloud');
-animateCircle('bar_iac');
-animateCircle('bar_term');
+document.querySelectorAll('.skillbar').forEach(animateCircle);

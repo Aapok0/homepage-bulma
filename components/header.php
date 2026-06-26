@@ -1,13 +1,16 @@
 <?php
 include_once(dirname(__FILE__).'/../config/chttps.php');
+
+$pageTitle = $pageTitle ?? 'Curriculum Vitae';
+$pageDescription = $pageDescription ?? 'Curriculum vitae and homepage for Aapo Kokko';
 ?>
 <!DOCTYPE html>
-<html lang='fi-FI'>
+<html lang='en'>
   <head>
     <!-- META INFROMATION -->
-    <title>Curriculum Vitae - Aapo Kokko</title>
+    <title><?= htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8') ?> - Aapo Kokko</title>
     <meta charset='UTF-8'>
-    <meta name='description' content='Curriculum vitae and homepage for Aapo Kokko'>
+    <meta name='description' content='<?= htmlspecialchars($pageDescription, ENT_QUOTES, 'UTF-8') ?>'>
     <meta name='author' content='Aapo Kokko'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
@@ -16,9 +19,6 @@ include_once(dirname(__FILE__).'/../config/chttps.php');
     <link rel='icon' type='image/x-icon' href='./favicon.ico'>
 
     <!-- SCRIPTS -->
-    <!-- jQuery -->
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
-    <!-- My scripts -->
     <script src='js/navToggle.js'></script>
   </head>
   <body>

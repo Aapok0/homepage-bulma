@@ -43,6 +43,6 @@ jobs:
         run: |
           rsync -aiv --exclude-from=exclude.txt ./ ${{ secrets.VM_USER }}@${{ secrets.VM_IP }}:/var/www/html/
 
-      - name: Restart Nginx
+      - name: Reload Nginx
         run: |
-          ssh ${{ secrets.VM_USER }}@${{ secrets.VM_IP }} sudo systemctl restart nginx.service
+          ssh ${{ secrets.VM_USER }}@${{ secrets.VM_IP }} sudo systemctl reload nginx.service

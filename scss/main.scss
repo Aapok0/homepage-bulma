@@ -1,29 +1,54 @@
-// ** SASS IMPORTS **
-
 @charset "utf-8";
 
-@import './colors';
-@import './fonts';
-@import './typography';
+@use 'palette' as p;
+@use 'fonts';
+@use 'bulma/sass' with (
+  $primary: p.$palette-3,
+  $link: p.$palette-5,
+  $info: #7d8caa,
+  $success: p.$palette-5,
+  $warning: p.$palette-4,
+  $danger: p.$palette-3,
+  $scheme-main: p.$palette-4,
+  $text: p.$my_white,
+  $text-invert: p.$my_black,
+  $text-strong: p.$my_white,
+  $family-primary: 'poiret_r, sans-serif',
+  $family-secondary: 'playfair_r, serif',
+  $family-code: 'raleway_r, sans-serif',
+);
+@use 'bulma/sass/utilities/mixins' as *;
+@use 'typography';
 
-// ** SITE WIDE **
+// Site wide
 
-html { 
+html {
   scroll-behavior: smooth;
 }
 
 .is-transparent {
-  opacity: 0.95
+  opacity: 0.95;
 }
 
-// ** NAVIGATION **
+// Navigation
 
-.is-open {
-  background-color: $palette-5;
-  color: $text-invert !important;
+.navbar {
+  --bulma-navbar-background-color: #{p.$palette-1};
 }
 
-// ** HERO BANNER **
+a.navbar-item.is-open {
+  background-color: p.$palette-5 !important;
+  color: p.$my_black !important;
+
+  &:hover,
+  &:focus,
+  &:focus-within {
+    background-color: p.$palette-5 !important;
+    color: p.$my_black !important;
+  }
+}
+
+// Hero banner
 
 .hero.has-background {
   position: relative;
@@ -38,7 +63,7 @@ html {
   height: 100%;
 }
 
-// ** ABOUT **
+// About
 
 .portrait {
   object-fit: cover;
@@ -48,40 +73,175 @@ html {
   margin-bottom: 1.5rem;
 }
 
-// ** RESUME **
+// Resume & shared content sections
 
-.resume-subtitle {
-  border-bottom: 3px solid $palette-4;
+.content-section {
+  padding: 1.25rem;
 }
 
-.resume-item {
-  border-bottom: 1px solid $palette-4;
-  border-right: 1px solid $palette-4;
+.content-section-title {
+  margin-bottom: 1rem;
 }
 
-// ** SKILLS **
+.content-collapsible {
+  summary.content-section-title {
+    list-style: none;
 
-.skillbar {
-  transform: rotate(-90deg);
-  transition: all 1s ease-in-out;
-  
-  /* SVG */
-  fill: none;
-  stroke: $palette-5;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-dasharray: 0 999;
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
 }
 
-.skilltext {
+.content-collapsible-body,
+.resume-collapsible-body {
+  margin-top: 0.75rem;
+}
+
+.resume-disclosure summary {
+  cursor: pointer;
+  list-style: none;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+.resume-disclosure-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.15s ease;
+
+  &::before {
+    content: '▸';
+    flex-shrink: 0;
+    transition: transform 0.15s ease;
+  }
+
+  &:hover {
+    color: p.$palette-5;
+  }
+}
+
+.resume-disclosure[open] .resume-disclosure-summary::before {
   transform: rotate(90deg);
 }
 
-// ** INTERESTS **
+.resume-subtitle {
+  border-bottom: 3px solid p.$palette-4;
+}
 
+.resume-entry + .resume-entry,
+.resume-entry-organization + .resume-entry-organization {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid p.$palette-3;
+}
 
+.resume-entry:first-child,
+.content-section-title + .resume-context + .resume-entry,
+.content-section-title + .resume-entry,
+.content-section-title + .resume-entry-organization {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
 
-// ** FOOTER **
+.resume-entry-organization .resume-role + .resume-role {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid p.$palette-3;
+}
+
+.resume-meta,
+.resume-detail,
+.resume-context {
+  margin-bottom: 0.35rem;
+}
+
+// Skills
+
+.skill-legend {
+  .tag {
+    margin: 0.25rem;
+  }
+}
+
+.skill-tier-daily {
+  background-color: p.$palette-2 !important;
+  color: p.$my_white !important;
+  border: 2px solid p.$palette-5;
+}
+
+.skill-tier-production {
+  background-color: p.$palette-5 !important;
+  color: p.$my_black !important;
+}
+
+.skill-tier-working {
+  background-color: p.$palette-4 !important;
+  color: p.$my_white !important;
+}
+
+.skill-tier-learning {
+  background-color: #7d8caa !important;
+  color: p.$my_black !important;
+}
+
+.skill-category {
+  margin-bottom: 1rem;
+
+  .tags {
+    justify-content: center;
+  }
+
+  .tag {
+    margin: 0.25rem;
+  }
+}
+
+// Interests
+
+.interest-section-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.interest-section-content,
+.interest-section-media {
+  width: 100%;
+
+  @include desktop {
+    width: calc(50% - 0.5rem);
+  }
+}
+
+.interest-section-media img {
+  width: 100%;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+.interest-list {
+  list-style-type: circle;
+  margin-left: 1rem;
+}
+
+.interest-sublist {
+  list-style-type: square;
+  margin-left: 1rem;
+  margin-top: 0.35rem;
+}
+
+// Footer
+
+.footer {
+  --bulma-footer-background-color: #{p.$palette-1};
+}
 
 .github {
   display: inline-block;
@@ -92,9 +252,6 @@ html {
 }
 
 .github:hover {
-  display: inline-block;
-  width: 48px;
-  height: 48px;
   background: url(../img/github-white.png) no-repeat;
   background-size: cover;
 }
@@ -108,9 +265,6 @@ html {
 }
 
 .linkedin:hover {
-  display: inline-block;
-  width: 48px;
-  height: 48px;
   background: url(../img/linkedin-white.png) no-repeat;
   background-size: cover;
 }
@@ -124,22 +278,22 @@ html {
 }
 
 .instagram:hover {
-  display: inline-block;
-  width: 48px;
-  height: 48px;
   background: url(../img/instagram-white.png) no-repeat;
   background-size: cover;
 }
 
-// Import Bulma CSS here in order to not overwrite my own CSS above
-
-@import '../node_modules/bulma/bulma';
-
-// ** REQUIRES BULMA **
+// Bulma responsive helpers
 
 .hero-text {
   @include mobile {
     max-width: 92% !important;
+  }
+
+  .title a {
+    &:hover,
+    &:focus-visible {
+      color: p.$my_white;
+    }
   }
 
   @include tablet {
@@ -159,50 +313,22 @@ html {
   }
 }
 
-svg.skillbar {
-  @include mobile {
-    width: 150px;
-    height: 150px;
-  }
-
-  @include tablet {
-    width: 200px;
-    height: 200px;
-  }
+.background-1 {
+  background-color: p.$palette-1 !important;
 }
 
-.interest-flex {
-  @include touch {
-    display: flex !important;
-    flex-wrap: wrap !important;
-  }
-
-  @include desktop {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-  }
+.background-2 {
+  background-color: p.$palette-2 !important;
 }
 
-.interest-flex-reverse {
-  @include touch {
-    display: flex !important;
-    flex-wrap: wrap-reverse !important;
-  }
-  
-  @include desktop {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-  }
+.background-3 {
+  background-color: p.$palette-3 !important;
 }
 
-.interest-item {
-  @include touch {
-    width: 96%;
-  }
+.background-4 {
+  background-color: p.$palette-4 !important;
+}
 
-  @include desktop {
-    width: 48%;
-  }
+.background-5 {
+  background-color: p.$palette-5 !important;
 }

@@ -1,59 +1,45 @@
-// ** RALEWAY **
+// Raleway
 
-// Light
 @font-face {
   font-family: 'raleway_l';
   src: url('../fonts/Raleway/static/Raleway-ExtraLight.ttf');
 }
 
-// Regular
 @font-face {
   font-family: 'raleway_r';
   src: url('../fonts/Raleway/static/Raleway-Regular.ttf');
 }
 
-// Bold
 @font-face {
   font-family: 'raleway_b';
   src: url('../fonts/Raleway/static/Raleway-Bold.ttf');
 }
 
-// Italic
 @font-face {
   font-family: 'raleway_i';
   src: url('../fonts/Raleway/static/Raleway-Italic.ttf');
 }
 
-// Bold Italic
 @font-face {
   font-family: 'raleway_bi';
   src: url('../fonts/Raleway/static/Raleway-BoldItalic.ttf');
 }
 
-// ** POIRET ONE **
+// Poiret One
 
-// Regular
 @font-face {
   font-family: 'poiret_r';
   src: url('../fonts/Poiret_One/PoiretOne-Regular.ttf');
 }
 
-// ** PLAYFAIR DISPLAY **
+// Playfair Display
 
-// Regular
 @font-face {
   font-family: 'playfair_r';
   src: url('../fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf');
 }
 
-// Italic
 @font-face {
   font-family: 'playfair_i';
   src: url('../fonts/Playfair_Display/PlayfairDisplay-Italic-VariableFont_wght.ttf');
 }
-
-// ** THEMING BULMA **
-
-$family-primary: poiret_r;
-$family-secondary: playfair_r;
-$family-code: raleway_r;

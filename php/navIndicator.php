@@ -1,75 +1,34 @@
 <?php
-  // Checking which site we are on
-  $url = $_SERVER['REQUEST_URI'];
-  $pos1 = strrpos($url, 'index.php');
-  $pos2 = strrpos($url, 'about.php');
-  $pos3 = strrpos($url, 'resume.php');
-  $pos4 = strrpos($url, 'skills.php');
-  $pos5 = strrpos($url, 'interests.php');
+  require_once __DIR__ . '/routing.php';
 
-  // Putting html into variables
-  $home = '<a class="navbar-item is-flex-direction-column is-justify-content-space-around" href="./"><img class="mb-1" src="img/home.png" alt="Home">Home</a>';
-  $about = '<a class="navbar-item is-flex-direction-column is-justify-content-space-around" href="about.php"><img class="mb-1" src="img/about.png" alt="About">About</a>';
-  $resume = '<a class="navbar-item is-flex-direction-column is-justify-content-space-around" href="resume.php"><img class="mb-1" src="img/resume.png" alt="Resume">Resume</a>';
-  $skills = '<a class="navbar-item is-flex-direction-column is-justify-content-space-around" href="skills.php"><img class="mb-1" src="img/skills.png" alt="Skills">Skills</a>';
-  $interests = '<a class="navbar-item is-flex-direction-column is-justify-content-space-around" href="interests.php"><img class="mb-1" src="img/interests.png" alt="Interests">Interests</a>';
-  $version1 = '<a class="navbar-item is-flex-direction-column is-justify-content-space-around" href="https://' . $_SERVER['HTTP_HOST'] . '/v1/"><img class="mb-1" src="img/home.png" alt="Home-Version 1">Home v1</a>';
+  $hosts = include __DIR__ . '/../config/hosts.php';
+  $canonical_host = $hosts['canonical'];
+  $current = current_page();
 
-  // Class that adds indicator to the page you are on
-  if ($pos1 != false) {
-    echo '<a class="navbar-item is-open is-flex-direction-column is-justify-content-space-around has-text-weight-bold" href="./"><img class="mb-1" src="img/home-dark.png" alt="Home">Home</a>';
-    echo $about;
-    echo $resume;
-    echo $skills;
-    echo $interests;
-    echo $version1;
+  $pages = [
+    ['file' => 'index', 'href' => './', 'label' => 'Home', 'icon' => 'home'],
+    ['file' => 'about', 'href' => 'about', 'label' => 'About', 'icon' => 'about'],
+    ['file' => 'resume', 'href' => 'resume', 'label' => 'Resume', 'icon' => 'resume'],
+    ['file' => 'skills', 'href' => 'skills', 'label' => 'Skills', 'icon' => 'skills'],
+    ['file' => 'interests', 'href' => 'interests', 'label' => 'Interests', 'icon' => 'interests'],
+  ];
+
+  foreach ($pages as $page) {
+    $active = ($current === $page['file']);
+    $icon = $active ? $page['icon'] . '-dark' : $page['icon'];
+    $classes = 'navbar-item is-flex-direction-column is-justify-content-space-around';
+
+    if ($active) {
+      $classes .= ' is-open has-text-weight-bold';
+    }
+
+    echo '<a class="' . $classes . '" href="' . $page['href'] . '">';
+    echo '<img class="mb-1" src="img/' . $icon . '.png" alt="' . $page['label'] . '">';
+    echo $page['label'];
+    echo '</a>';
   }
-  else if ($pos2 != false) {
-    echo $home;
-    echo '<a class="navbar-item is-open is-flex-direction-column is-justify-content-space-around has-text-weight-bold" href="about.php"><img class="mb-1" src="img/about-dark.png" alt="About">About</a>';
-    echo $resume;
-    echo $skills;
-    echo $interests;
-    echo $version1;
-  }
-  else if ($pos3 != false) {
-    echo $home;
-    echo $about;
-    echo '<a class="navbar-item is-open is-flex-direction-column is-justify-content-space-around has-text-weight-bold" href="resume.php"><img class="mb-1" src="img/resume-dark.png" alt="Resume">Resume</a>';
-    echo $skills;
-    echo $interests;
-    echo $version1;
-  }
-  else if ($pos4 != false) {
-    echo $home;
-    echo $about;
-    echo $resume;
-    echo '<a class="navbar-item is-open is-flex-direction-column is-justify-content-space-around has-text-weight-bold" href="skills.php"><img class="mb-1" src="img/skills-dark.png" alt="Skills">Skills</a>';
-    echo $interests;
-    echo $version1;
-  }
-  else if ($pos5 != false) {
-    echo $home;
-    echo $about;
-    echo $resume;
-    echo $skills;
-    echo '<a class="navbar-item is-open is-flex-direction-column is-justify-content-space-around has-text-weight-bold" href="interests.php"><img class="mb-1" src="img/interests-dark.png" alt="Interests">Interests</a>';
-    echo $version1;
-  }
-  else if ($pos6 != false) {
-    echo $home;
-    echo $about;
-    echo $resume;
-    echo $skills;
-    echo $interests;
-    echo $version1;
-  }
-  else {
-    echo $home;
-    echo $about;
-    echo $resume;
-    echo $skills;
-    echo $interests;
-    echo $version1;
-  }
+
+  echo '<a class="navbar-item is-flex-direction-column is-justify-content-space-around" href="https://' . $canonical_host . '/v1/">';
+  echo '<img class="mb-1" src="img/home.png" alt="Home-Version 1">Home v1';
+  echo '</a>';
 ?>
