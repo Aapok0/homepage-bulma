@@ -1,0 +1,3 @@
+# No dependency build scripts are needed for this CSS build; approving none
+# stops pnpm from erroring on ignored builds (e.g. @parcel/watcher).
+onlyBuiltDependencies: []
