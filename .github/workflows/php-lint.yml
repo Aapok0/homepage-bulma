@@ -1,10 +1,6 @@
 name: PHP Lint
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - '**.php'
   pull_request:
     paths:
       - '**.php'
@@ -19,7 +15,6 @@ concurrency:
 jobs:
   php-lint:
     name: php -l
-    if: ${{ github.actor != 'dependabot[bot]' }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
