@@ -41,7 +41,9 @@ jobs:
           cache: pnpm
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        # --ignore-scripts: don't run (unneeded) dependency build scripts and don't
+        # fail on ERR_PNPM_IGNORED_BUILDS; keeps deps consistent for the build below.
+        run: pnpm install --frozen-lockfile --ignore-scripts
 
       - name: Build main CSS
         run: pnpm run css-build
