@@ -4,7 +4,7 @@
 # Stage 1: Build CSS from SCSS
 # ==========================================
 
-FROM node:24-alpine@sha256:a0b9bf06e4e6193cf7a0f58816cc935ff8c2a908f81e6f1a95432d679c54fbfd AS assets
+FROM node:26-alpine@sha256:725aeba2364a9b16beae49e180d83bd597dbd0b15c47f1f28875c290bfd255b9 AS assets
 WORKDIR /build
 RUN corepack enable
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
@@ -16,7 +16,7 @@ RUN pnpm run css-build
 # Stage 2: PHP-FPM Production Image
 # ==========================================
 
-FROM php:8.3-fpm-alpine@sha256:bb1e2c31079e049c6c8f4f02e9a132c60efc681ac249d83ae97fc1c497307f75 AS runtime
+FROM php:8.5-fpm-alpine@sha256:fd9669cdc9caa2bc4857a2c9f6b5e86c47a7f85043a6717c29901ca4a8b1cd4e AS runtime
 WORKDIR /var/www/html
 
 LABEL org.opencontainers.image.source="https://github.com/Aapok0/homepage-bulma" \
