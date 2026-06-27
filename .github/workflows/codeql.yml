@@ -2,11 +2,17 @@ name: CodeQL
 
 on:
   push:
-    branches:
-      - main
-      - webhotel
-    paths-ignore:
-      - '.github/**'
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: '32 4 * * 1'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   analyze:
@@ -21,19 +27,18 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'javascript' ]
+        language: ['javascript', 'actions']
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+      - name: Checkout repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@7b6664fa89524ee6e3c3e9749402d5afd69b3cd8 # v2.14.1
-      with:
-        languages: ${{ matrix.language }}
-        # queries: security-extended,security-and-quality
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@dd903d2e4f5405488e5ef1422510ee31c8b32357 # v3
+        with:
+          languages: ${{ matrix.language }}
 
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@7b6664fa89524ee6e3c3e9749402d5afd69b3cd8 # v2.14.1
-      with:
-        category: "/language:${{matrix.language}}"
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@dd903d2e4f5405488e5ef1422510ee31c8b32357 # v3
+        with:
+          category: "/language:${{ matrix.language }}"
