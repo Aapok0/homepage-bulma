@@ -65,6 +65,40 @@ GitHub Actions workflow **CSS build** (`.github/workflows/css-build.yml`) runs `
 | JavaScript | `js/` |
 | Active nav indicator | `php/navIndicator.php` |
 
+## Docker (local container test)
+
+The production build is two images that run as a sidecar pair: an `nginx` front end and a `php-fpm` back end that talk over `127.0.0.1:9000`. To mirror that locally, the nginx container joins the php container's network namespace (same as a single Container Apps replica), so they share `localhost`.
+
+### Build both images
+
+```bash
+docker build --target runtime       -t homepage-bulma-php   .
+docker build --target nginx-sidecar -t homepage-bulma-nginx .
+```
+
+### Run the pair
+
+```bash
+# php-fpm owns the shared network namespace and publishes nginx's port
+docker run -d --name homepage-php -p 8080:8080 homepage-bulma-php
+
+# nginx joins that namespace, so fastcgi_pass to 127.0.0.1:9000 resolves
+docker run -d --name homepage-nginx --network "container:homepage-php" homepage-bulma-nginx
+```
+
+Open http://localhost:8080/. Port `8080` is published on the **php** container because the first container owns the namespace; the joining nginx container can't add its own port mappings.
+
+`APP_ENV=production` is baked into the image, but `localhost` is listed under `local` in `config/hosts.php`, so the HTTPS redirect in `config/chttps.php` is skipped and the site serves over plain HTTP.
+
+### Logs and cleanup
+
+```bash
+docker logs homepage-nginx
+docker logs homepage-php
+
+docker rm -f homepage-nginx homepage-php
+```
+
 ## Releasing (version tags)
 
 The webserver Ansible pins each app to a git ref via `nginx_apps[].version`. Cut a release by tagging `main`:

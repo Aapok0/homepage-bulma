@@ -23,3 +23,12 @@ updates:
     groups:
       docker:
         patterns: ["*"]
+    ignore:
+      # Pin node to the 24 LTS line; allow minor/patch + digest updates.
+      - dependency-name: "node"
+        update-types: ["version-update:semver-major"]
+      # Pin php to 8.3; allow patch + digest updates only.
+      - dependency-name: "php"
+        update-types:
+          - "version-update:semver-major"
+          - "version-update:semver-minor"
