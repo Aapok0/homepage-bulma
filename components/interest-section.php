@@ -1,13 +1,11 @@
 <?php
 $textClass = 'is-size-5-widescreen is-size-6-desktop is-size-7-mobile has-text-left';
-$imageFirst = ($interestIndex ?? 0) % 2 === 0;
+$reverseOnWide = ($interestIndex ?? 0) % 2 === 1;
 ?>
-<section class='content-section box background-1 interest-section-wrap mb-5'>
-  <?php if ($imageFirst): ?>
+<section class='content-section box background-1 interest-section-wrap mb-5<?= $reverseOnWide ? ' is-reversed' : '' ?>'>
   <div class='interest-section-media'>
     <img src='<?= htmlspecialchars($interest['image']['src'], ENT_QUOTES, 'UTF-8') ?>' alt='<?= htmlspecialchars($interest['image']['alt'], ENT_QUOTES, 'UTF-8') ?>' loading='lazy'>
   </div>
-  <?php endif; ?>
   <div class='interest-section-content'>
     <h2 class='subtitle is-size-5 is-size-6-mobile is-family-code'><?= htmlspecialchars($interest['title'], ENT_QUOTES, 'UTF-8') ?></h2>
     <ul class='interest-list <?= $textClass ?>'>
@@ -25,9 +23,4 @@ $imageFirst = ($interestIndex ?? 0) % 2 === 0;
       <?php endforeach; ?>
     </ul>
   </div>
-  <?php if (!$imageFirst): ?>
-  <div class='interest-section-media'>
-    <img src='<?= htmlspecialchars($interest['image']['src'], ENT_QUOTES, 'UTF-8') ?>' alt='<?= htmlspecialchars($interest['image']['alt'], ENT_QUOTES, 'UTF-8') ?>' loading='lazy'>
-  </div>
-  <?php endif; ?>
 </section>

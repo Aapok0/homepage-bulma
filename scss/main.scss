@@ -209,6 +209,14 @@ a.navbar-item.is-open {
   gap: 1rem;
   align-items: center;
   justify-content: space-between;
+
+  // Image is first in the DOM (picture above text when stacked). On wide
+  // screens, alternate rows put the image on the right.
+  @include desktop {
+    &.is-reversed {
+      flex-direction: row-reverse;
+    }
+  }
 }
 
 .interest-section-content,

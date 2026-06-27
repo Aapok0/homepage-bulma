@@ -1,0 +1,10 @@
+.git
+.github
+node_modules
+.pnpm-store
+css
+.vscode
+*.code-workspace
+README.md
+exclude.txt
+.anstmp
