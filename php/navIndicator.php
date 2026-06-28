@@ -1,8 +1,6 @@
 <?php
   require_once __DIR__ . '/routing.php';
 
-  $hosts = include __DIR__ . '/../config/hosts.php';
-  $canonical_host = $hosts['canonical'];
   $current = current_page();
 
   $pages = [
@@ -27,8 +25,4 @@
     echo $page['label'];
     echo '</a>';
   }
-
-  echo '<a class="navbar-item is-flex-direction-column is-justify-content-space-around" href="https://' . $canonical_host . '/v1/">';
-  echo '<img class="mb-1" src="img/home.png" alt="Home-Version 1">Home v1';
-  echo '</a>';
 ?>

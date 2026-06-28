@@ -1,6 +1,6 @@
 {
   "name": "homepage-bulma",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "CV website made with Bulma framework",
   "main": "scss/main.scss",
   "packageManager": "pnpm@11.9.0",
