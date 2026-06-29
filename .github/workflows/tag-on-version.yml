@@ -1,7 +1,8 @@
 name: Tag on version change
 
 # When package.json's version changes on main, create and push v<version>
-# (annotated) if that tag doesn't already exist.
+# (annotated) if that tag doesn't already exist. Also publishes the images
+# to GHCR, if the tag was created.
 
 on:
   push:
@@ -21,6 +22,9 @@ jobs:
     name: Create version tag
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    outputs:
+      version: ${{ steps.pkg.outputs.version }}
+      created: ${{ steps.tag.outputs.created }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
@@ -32,15 +36,29 @@ jobs:
         run: echo "version=$(jq -r .version package.json)" >> "$GITHUB_OUTPUT"
 
       - name: Create and push tag if missing
+        id: tag
         env:
           VERSION: ${{ steps.pkg.outputs.version }}
         run: |
           tag="v${VERSION}"
           if git rev-parse -q --verify "refs/tags/${tag}" >/dev/null; then
             echo "Tag ${tag} already exists; nothing to do."
+            echo "created=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git tag -a "${tag}" -m "Release ${tag}"
           git push origin "${tag}"
+          echo "created=true" >> "$GITHUB_OUTPUT"
+
+  publish:
+    name: Publish images
+    needs: tag
+    if: needs.tag.outputs.created == 'true'
+    permissions:
+      contents: read
+      packages: write
+    uses: ./.github/workflows/docker-publish.yml
+    with:
+      version: ${{ needs.tag.outputs.version }}
