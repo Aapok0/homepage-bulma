@@ -10,12 +10,18 @@ function request_host(array $hosts): string
     $host = $_SERVER['HTTP_HOST'] ?? '';
     $host = strtolower(preg_replace('/:\d+$/', '', $host));
 
-    if (!in_array($host, $hosts['allowed'], true)) {
-        http_response_code(400);
-        exit('Invalid host');
+    if (in_array($host, $hosts['allowed'], true)) {
+        return $host;
     }
 
-    return $host;
+    foreach ($hosts['allowed_suffixes'] ?? [] as $suffix) {
+        if (str_ends_with($host, $suffix)) {
+            return $host;
+        }
+    }
+
+    http_response_code(400);
+    exit('Invalid host');
 }
 
 function is_https(): bool
