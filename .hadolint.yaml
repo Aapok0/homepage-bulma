@@ -1,0 +1,7 @@
+# hadolint configuration. See https://github.com/hadolint/hadolint#configure
+failure-threshold: warning
+
+ignored:
+  # The virtual .build-deps ($PHPIZE_DEPS) are installed and removed within the
+  # same layer, so pinning apk versions adds churn without improving the image.
+  - DL3018
