@@ -29,7 +29,7 @@ ENV APP_ENV=production
 # opcache has to be compiled; the alpine base ships no build toolchain, so add
 # $PHPIZE_DEPS just for the build and remove it again to keep the image small.
 RUN set -eux; \
-    apk add --no-cache --virtual .build-deps $PHPIZE_DEPS; \
+    apk add --no-cache --virtual .build-deps "$PHPIZE_DEPS"; \
     docker-php-ext-install opcache; \
     apk del .build-deps
 
@@ -41,10 +41,8 @@ COPY docker/php/www.conf /usr/local/etc/php-fpm.d/www.conf
 # App source + compiled CSS; drop the build-context config dir from the web root.
 COPY . .
 COPY --from=assets /build/css ./css
-RUN rm -rf docker
+RUN rm -rf docker && chown -R www-data:www-data /var/www
 
-# Switch ownership to www-data user and run as non-root.
-RUN chown -R www-data:www-data /var/www
 USER www-data
 
 EXPOSE 9000
