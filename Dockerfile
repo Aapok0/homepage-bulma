@@ -16,7 +16,7 @@ RUN pnpm run css-build
 # Stage 2: PHP-FPM Production Image
 # ==========================================
 
-FROM php:8.3-fpm-alpine@sha256:bb1e2c31079e049c6c8f4f02e9a132c60efc681ac249d83ae97fc1c497307f75 AS runtime
+FROM php:8.3-fpm-alpine@sha256:9fcec48321d890240d700ccdc2b475420c87d398826e68c3d8830b8fca663e5c AS runtime
 WORKDIR /var/www/html
 
 LABEL org.opencontainers.image.source="https://github.com/Aapok0/homepage-bulma" \
@@ -32,7 +32,8 @@ ENV APP_ENV=production
 RUN set -eux; \
     apk add --no-cache --virtual .build-deps $PHPIZE_DEPS; \
     docker-php-ext-install opcache; \
-    apk del .build-deps
+    apk del .build-deps; \
+    apk upgrade --no-cache
 
 # Production php.ini baseline, then our overrides + the tuned php-fpm pool.
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
@@ -52,7 +53,7 @@ EXPOSE 9000
 # ==========================================
 
 # Unprivileged nginx: runs as uid 101, listens on 8080, pid in /tmp.
-FROM nginxinc/nginx-unprivileged:alpine@sha256:a8d5564c3354241473c1e152d5dd3281ab4224edb61b23c291e0bfd9854687a1 AS nginx-sidecar
+FROM nginxinc/nginx-unprivileged:alpine@sha256:592b23aa79a6e6c08ba4b20f1fff700e1328895705966722608e115d62e52d39 AS nginx-sidecar
 
 LABEL org.opencontainers.image.source="https://github.com/Aapok0/homepage-bulma" \
       org.opencontainers.image.title="homepage-bulma (nginx)" \
@@ -61,6 +62,8 @@ LABEL org.opencontainers.image.source="https://github.com/Aapok0/homepage-bulma"
 # Build steps need root (this image defaults to a non-root user).
 USER root
 WORKDIR /var/www/html
+
+RUN apk upgrade --no-cache
 
 COPY docker/nginx/default.conf /etc/nginx/conf.d/default.conf
 
