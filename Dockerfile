@@ -32,7 +32,8 @@ ENV APP_ENV=production
 RUN set -eux; \
     apk add --no-cache --virtual .build-deps $PHPIZE_DEPS; \
     docker-php-ext-install opcache; \
-    apk del .build-deps
+    apk del .build-deps; \
+    apk upgrade --no-cache
 
 # Production php.ini baseline, then our overrides + the tuned php-fpm pool.
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
@@ -61,6 +62,8 @@ LABEL org.opencontainers.image.source="https://github.com/Aapok0/homepage-bulma"
 # Build steps need root (this image defaults to a non-root user).
 USER root
 WORKDIR /var/www/html
+
+RUN apk upgrade --no-cache
 
 COPY docker/nginx/default.conf /etc/nginx/conf.d/default.conf
 
