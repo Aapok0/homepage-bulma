@@ -28,6 +28,6 @@
   "devDependencies": {
     "bulma": "^1.0.4",
     "concurrently": "^10.0.3",
-    "sass": "^1.101.0"
+    "sass": "^1.101.6"
   }
 }
