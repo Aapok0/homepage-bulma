@@ -53,7 +53,7 @@ EXPOSE 9000
 # ==========================================
 
 # Unprivileged nginx: runs as uid 101, listens on 8080, pid in /tmp.
-FROM nginxinc/nginx-unprivileged:alpine@sha256:592b23aa79a6e6c08ba4b20f1fff700e1328895705966722608e115d62e52d39 AS nginx-sidecar
+FROM nginxinc/nginx-unprivileged:alpine@sha256:59ccf0943b0b8e8d9e6ea9039a39555730f544701a655c596f7df7d096c593f5 AS nginx-sidecar
 
 LABEL org.opencontainers.image.source="https://github.com/Aapok0/homepage-bulma" \
       org.opencontainers.image.title="homepage-bulma (nginx)" \
