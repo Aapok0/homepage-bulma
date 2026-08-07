@@ -16,7 +16,7 @@ RUN pnpm run css-build
 # Stage 2: PHP-FPM Production Image
 # ==========================================
 
-FROM php:8.3-fpm-alpine@sha256:9fcec48321d890240d700ccdc2b475420c87d398826e68c3d8830b8fca663e5c AS runtime
+FROM php:8.3-fpm-alpine@sha256:bf90236449d333cef008b1f01c72a3d4f11a6470a74629665e4c6b6158f03fc8 AS runtime
 WORKDIR /var/www/html
 
 LABEL org.opencontainers.image.source="https://github.com/Aapok0/homepage-bulma" \
@@ -53,7 +53,7 @@ EXPOSE 9000
 # ==========================================
 
 # Unprivileged nginx: runs as uid 101, listens on 8080, pid in /tmp.
-FROM nginxinc/nginx-unprivileged:alpine@sha256:592b23aa79a6e6c08ba4b20f1fff700e1328895705966722608e115d62e52d39 AS nginx-sidecar
+FROM nginxinc/nginx-unprivileged:alpine@sha256:a6c3ec0c0d249d68b0682df854d4a9e222b90fb607dc3fcf2f1d2fcbc85d347e AS nginx-sidecar
 
 LABEL org.opencontainers.image.source="https://github.com/Aapok0/homepage-bulma" \
       org.opencontainers.image.title="homepage-bulma (nginx)" \
