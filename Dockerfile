@@ -4,7 +4,7 @@
 # Stage 1: Build CSS from SCSS
 # ==========================================
 
-FROM node:24-alpine@sha256:a0b9bf06e4e6193cf7a0f58816cc935ff8c2a908f81e6f1a95432d679c54fbfd AS assets
+FROM node:24-alpine@sha256:d32cdf619f63fe0471182d08996dd516c6275bb5fd31ae06e55a570bd9e1ad43 AS assets
 WORKDIR /build
 RUN corepack enable
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
@@ -53,7 +53,7 @@ EXPOSE 9000
 # ==========================================
 
 # Unprivileged nginx: runs as uid 101, listens on 8080, pid in /tmp.
-FROM nginxinc/nginx-unprivileged:alpine@sha256:a6c3ec0c0d249d68b0682df854d4a9e222b90fb607dc3fcf2f1d2fcbc85d347e AS nginx-sidecar
+FROM nginxinc/nginx-unprivileged:alpine@sha256:334d92979f15aaecd5dd50af5105e1230e2bb70765d45b1e2f964e7c5eda81c3 AS nginx-sidecar
 
 LABEL org.opencontainers.image.source="https://github.com/Aapok0/homepage-bulma" \
       org.opencontainers.image.title="homepage-bulma (nginx)" \
